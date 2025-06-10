@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Shop</title>
+</head>
+<body>
+    <h1>Available Products</h1>
+    <ul>
+        {% for pid, p in products.items() %}
+        <li>
+            <h2>{{ p.name }}</h2>
+            <img src="{{ p.image_url }}" width="300"><br>
+            <strong>${{ p.price }}</strong> - {{ p.status }}<br>
+            <p>{{ p.desc }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
