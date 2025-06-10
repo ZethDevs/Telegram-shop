@@ -126,7 +126,7 @@ def handle_buttons(call):
             f"╭─────────────────╮\n│ \U0001F9FE *Purchase :* `{p['name']}`\n"
             f"│ \U0001F4B0 *Price :* `${p['price']}`\n╰─────────────────╯\n"
             f"\U0001F4CC *Payment Instructions:*\n"
-            f"☕ Donate via ko-fi : `[Nathanaeru](https://ko-fi.com/nathanaeru#checkoutModal)`\n"
+            f"☕ Donate via ko-fi : [Nathanaeru](https://ko-fi.com/nathanaeru#checkoutModal)\n"
             f"💳 Pay via Paypal : [Nathanaeru](https://www.paypal.me/imlutfifarid)\n"
         )
         for name, wallet in CRYPTO_WALLET.items():
