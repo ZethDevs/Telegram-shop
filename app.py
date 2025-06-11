@@ -32,25 +32,39 @@ products = {
         "status": "Ready",
     },
     3: {
-        "name": "Mod APK Unlocker (OpenTunnel)",
+        "name": "Mod APK Unlocker (OpenTunnel v1.0.7 Latest)",
         "desc": "Mod Apk Unlocker using inject Log Decrypt Full config.",
         "price": 3,
         "image_url": "https://i.ibb.co/wFWyNRSG/Screenshot-2025-06-10-11-05-35-614-edit-bin-mt-plus-canary.jpg",
         "status": "Ready",
     },
     4: {
+        "name": "Mod APK Unlocker (ZIVPN Tunnel v2.0.3 Latest)",
+        "desc": "Mod Apk Unlocker using inject Log Decrypt Full config.",
+        "price": 3,
+        "image_url": "https://i.ibb.co/LbwgSgR/Screenshot-2025-06-11-07-15-25-754-edit-bin-mt-plus-canary.jpg",
+        "status": "Ready",
+    },
+    5: {
         "name": "JSHook (Opentunnel)",
-        "desc": "script for decrypt OpenTunnel Injector.",
+        "desc": "exclusive script for decrypt OpenTunnel Injector.",
         "price": 30,
         "image_url": "https://i.ibb.co/1BZXFTB/IMG-20250610-113011.jpg",
         "status": "Ready",
     },
-    5: {
+    6: {
         "name": "JSHook (e-v2ray)",
-        "desc": "script for decrypt e-v2ray Injector.",
+        "desc": "exclusive script for decrypt e-v2ray Injector.",
         "price": 30,
         "image_url": "https://i.ibb.co/GfwZqkMd/IMG-20250610-113033.jpg",
         "status": "Ready",
+    },
+    7: {
+        "name": "JSHook (ZIVPN Tunnel)",
+        "desc": "exclusive script for decrypt ZIVPN Tunnel Injector.",
+        "price": 30,
+        "image_url": "https://i.ibb.co/hFbc0r8v/file-00000000f898622faa3931383e04bb3f.png",
+        "status": "Coming soon",
     },
 }
 
@@ -69,7 +83,7 @@ def send_product_list(chat_id):
     markup = InlineKeyboardMarkup()
     for pid, p in products.items():
         markup.add(InlineKeyboardButton(p['name'], callback_data=f"view_{pid}"))
-    bot.send_message(chat_id, "👋 *Welcome to Nathan - STORE*\n\nThis is your time for be best decryptor. 😈\nYou’ll enjoy use tools from us — stay alert!\n\n_We provide high-quality scripts and tools for decrypting VPN configuration._\n\n*If you want to sell your products, please contact @Nathanaeru to list your products on this bot.*\n```\n━━━━━━━━━━━━━━━━━\n👑 Products Available : 5\n💵 >Total Transaction : 17\n```", reply_markup=markup, parse_mode='Markdown')
+    bot.send_message(chat_id, "👋 *Welcome to Nathan - STORE*\n\nThis is your time for be best decryptor. 😈\nYou’ll enjoy use tools from us — stay alert!\n\n_We provide high-quality scripts and tools for decrypting VPN configuration._\n\n*If you want to sell your products, please contact @Nathanaeru to list your products on this bot.*\n```\n━━━━━━━━━━━━━━━━━\n👑 Products Available : 7\n💵 >Total Transaction : 17\n```", reply_markup=markup, parse_mode='Markdown')
 
 @bot.message_handler(commands=['cancel'])
 def cancel(message):
