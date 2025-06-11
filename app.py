@@ -3,6 +3,7 @@ import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import time
 import threading
+import os
 
 app = Flask(__name__)
 
@@ -75,7 +76,7 @@ admin_order_refs = {}
 def index():
     return render_template('index.html', products=products)
 
-@bot.message_handler(commands=['start', 'menu'])
+@bot.message_handler(commands=['start'])
 def show_products(message):
     send_product_list(message.chat.id)
 
@@ -93,6 +94,21 @@ def cancel(message):
         bot.send_message(chat_id, "\u274C Your order has been canceled.")
     else:
         bot.send_message(chat_id, "You don't have any active order.")
+
+@bot.message_handler(commands=["free"])
+def handle_free(message):
+    bot.reply_to(
+        message,
+        "There is a special gift from someone for you :\n"
+        "===========❤️🐣❤️===========\n"
+        "Thanks to @Leneath"
+    )
+    gift_path = os.path.join(os.getcwd(), "LinkLayerVPN.lua")
+    if os.path.exists(gift_path):
+        with open(gift_path, "rb") as gift:
+            bot.send_document(message.chat.id, gift)
+    else:
+        bot.send_message(message.chat.id, "\u274C Gift file not found.")
 
 @bot.callback_query_handler(func=lambda call: True)
 def handle_buttons(call):
