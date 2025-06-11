@@ -84,7 +84,7 @@ def send_product_list(chat_id):
     markup = InlineKeyboardMarkup()
     for pid, p in products.items():
         markup.add(InlineKeyboardButton(p['name'], callback_data=f"view_{pid}"))
-    bot.send_message(chat_id, "👋 *Welcome to Nathan - STORE*\n\nThis is your time for be best decryptor. 😈\nYou’ll enjoy use tools from us — stay alert!\n\n_We provide high-quality scripts and tools for decrypting VPN configuration._\n\n*If you want to sell your products, please contact @Nathanaeru to list your products on this bot.*\n```\n━━━━━━━━━━━━━━━━━\n👑 Products Available : 7\n💵 >Total Transaction : 17\n```", reply_markup=markup, parse_mode='Markdown')
+    bot.send_message(chat_id, "👋 *Welcome to Nathan - STORE*\n\nThis is your time for be best decryptor. 😈\nYou’ll enjoy use tools from us — stay alert!\n\n_We provide high-quality scripts and tools for decrypting VPN configuration._\n\n*/free to get free script from us.*\n```\n━━━━━━━━━━━━━━━━━\n👑 Products Available : 7\n💵 >Total Transaction : 17\n```", reply_markup=markup, parse_mode='Markdown')
 
 @bot.message_handler(commands=['cancel'])
 def cancel(message):
@@ -106,7 +106,7 @@ def handle_free(message):
     gift_path = os.path.join(os.getcwd(), "LinkLayerVPN.lua")
     if os.path.exists(gift_path):
         with open(gift_path, "rb") as gift:
-            bot.send_document(message.chat.id, gift)
+            bot.send_document(message.chat.id, gift, caption="────────────────\n• Target : LinkLayer VPN\n• Extension : .Ink\nType : Auto Print Lua ✅")
     else:
         bot.send_message(message.chat.id, "\u274C Gift file not found.")
 
