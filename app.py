@@ -98,7 +98,7 @@ def send_product_list(chat_id):
     markup = InlineKeyboardMarkup()
     for pid, p in products.items():
         markup.add(InlineKeyboardButton(p['name'], callback_data=f"view_{pid}"))
-    bot.send_message(chat_id, "👋 *Welcome to Nathan - STORE*\n\nThis is your time for be best decryptor. 😈\nYou’ll enjoy use tools from us — stay alert!\n\n_We provide high-quality scripts and tools for decrypting VPN configuration._\n\n*/free to get free script from us.*\n```\n━━━━━━━━━━━━━━━━━\n👑 Products Available : 7\n💵 >Total Transaction : 17\n```", reply_markup=markup, parse_mode='Markdown')
+    bot.send_message(chat_id, "👋 *Welcome to Nathan - STORE*\n\nThis is your time for be best decryptor. 😈\nYou’ll enjoy use tools from us — stay alert!\n\n_We provide high-quality scripts and tools for decrypting VPN configuration._\n\n*/free to get free script from us.*\n```\n━━━━━━━━━━━━━━━━━\n👑 Products Available : 8\n💵 >Total Transaction : 21\n```", reply_markup=markup, parse_mode='Markdown')
 
 @bot.message_handler(commands=['cancel'])
 def cancel(message):
