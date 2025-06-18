@@ -47,22 +47,29 @@ products = {
         "status": "Ready",
     },
     5: {
+        "name": "Mod APK Unlocker & Python 💎 (HTTP CUSTOM v5.11.29-RC90 Latest)",
+        "desc": "Mod Apk Unlocker using inject Log Decrypt SSH/V2ray/OpenVPN/Psiphon/UDP",
+        "price": 30,
+        "image_url": "https://i.ibb.co/kszF2DKw/IMG-20250617-175644-721.jpg",
+        "status": "Ready",
+    },
+    6: {
         "name": "JSHook (Opentunnel)",
         "desc": "exclusive script for decrypt OpenTunnel Injector.",
         "price": 30,
         "image_url": "https://i.ibb.co/1BZXFTB/IMG-20250610-113011.jpg",
         "status": "Ready",
     },
-    6: {
+    7: {
         "name": "JSHook (e-v2ray)",
         "desc": "exclusive script for decrypt e-v2ray Injector.",
         "price": 30,
         "image_url": "https://i.ibb.co/GfwZqkMd/IMG-20250610-113033.jpg",
         "status": "Ready",
     },
-    7: {
-        "name": "JSHook (ZIVPN Tunnel)",
-        "desc": "exclusive script for decrypt ZIVPN Tunnel Injector.",
+    8: {
+        "name": "JSHook (?????) Coming soon🔥",
+        "desc": "exclusive script for decrypt ??.",
         "price": 30,
         "image_url": "https://i.ibb.co/hFbc0r8v/file-00000000f898622faa3931383e04bb3f.png",
         "status": "Coming soon",
