@@ -47,7 +47,7 @@ products = {
         "status": "Ready",
     },
     5: {
-        "name": "Mod APK Unlocker & Python 💎 (HTTP CUSTOM v5.11.29-RC90 Latest)",
+        "name": "Unlocker & Python (HTTP CUSTOM v5.11.29-RC90 Latest)",
         "desc": "Mod Apk Unlocker using inject Log Decrypt SSH/V2ray/OpenVPN/Psiphon/UDP",
         "price": 30,
         "image_url": "https://i.ibb.co/kszF2DKw/IMG-20250617-175644-721.jpg",
@@ -68,6 +68,13 @@ products = {
         "status": "Ready",
     },
     8: {
+        "name": "JSHook (SocksHTTP Plus)",
+        "desc": "exclusive script for decrypt sksplus.",
+        "price": 30,
+        "image_url": "https://i.ibb.co/j9hRkFb8/IMG-20250619-050008.jpg",
+        "status": "Ready",
+    },
+    9: {
         "name": "JSHook (?????) Coming soon🔥",
         "desc": "exclusive script for decrypt ??.",
         "price": 30,
