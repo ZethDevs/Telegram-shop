@@ -94,6 +94,22 @@ products = {
         "category": "JSHook"
     },
     10: {
+        "name": "JSHook (ZIVPN)",
+        "desc": "exclusive script for decrypt ziv.",
+        "price": 15,
+        "image_url": "https://i.ibb.co/tNvxJkf/Screenshot-2025-07-06-21-49-46-033-com-vphonegaga-titan.jpg",
+        "status": "Ready",
+        "category": "JSHook"
+    },
+    11: {
+        "name": "JSHook (SSH Injector)",
+        "desc": "exclusive script for decrypt ssh.",
+        "price": 10,
+        "image_url": "https://i.ibb.co/Ldhvqfbs/Screenshot-2025-07-06-22-13-18-471-com-vphonegaga-titan.jpg",
+        "status": "Ready",
+        "category": "JSHook"
+    },
+    12: {
         "name": "JSHook (?????) Coming soon🔥",
         "desc": "exclusive script for decrypt ??.",
         "price": 99,
