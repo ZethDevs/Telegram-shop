@@ -110,6 +110,14 @@ products = {
         "category": "JSHook"
     },
     12: {
+        "name": "JSHook (StarkVPN Reloaded)",
+        "desc": "exclusive script for decrypt stk.",
+        "price": 10,
+        "image_url": "https://i.ibb.co/0Vzv43br/Screenshot-2025-07-08-18-20-27-255-com-vphonegaga-titan.jpg",
+        "status": "Ready",
+        "category": "JSHook"
+    },
+    13: {
         "name": "JSHook (?????) Coming soon🔥",
         "desc": "exclusive script for decrypt ??.",
         "price": 99,
@@ -128,19 +136,33 @@ def format_runtime():
     minutes, seconds = divmod(remainder, 60)
     return f"{hours}h {minutes}m {seconds}s"
 
-def send_product_list(chat_id):
-    msg = "🛍 *Our Products:*\n\n"
-    markup = InlineKeyboardMarkup()
-    categorized = {}
-    for pid, p in products.items():
+# Kirim daftar kategori sebagai tombol
+def send_category_list(chat_id):
+    categories = {}
+    for p in products.values():
         cat = p.get("category", "Uncategorized")
-        categorized.setdefault(cat, []).append((pid, p))
-    for cat, items in categorized.items():
-        msg += f"📁 *{cat}*\n"
-        for pid, p in items:
-            msg += f"▫️ *{p['name']}* - `${p['price']}` ({p['status']})\n"
-            markup.add(InlineKeyboardButton(f"🔎 View {p['name']}", callback_data=f"view_{pid}"))
-        msg += "\n"
+        categories[cat] = categories.get(cat, 0) + 1
+
+    msg = "🗂 *Select Product Category :*"
+    markup = InlineKeyboardMarkup(row_width=2)
+    for cat in categories.keys():
+        markup.add(InlineKeyboardButton(cat, callback_data=f"category_{cat}"))
+    bot.send_message(chat_id, msg, reply_markup=markup, parse_mode='Markdown')
+
+
+# Kirim daftar produk dalam kategori
+def send_products_by_category(chat_id, category):
+    filtered = [(pid, p) for pid, p in products.items() if p.get("category", "") == category]
+    if not filtered:
+        bot.send_message(chat_id, f"❌ Category *{category}* not found or no product yet.", parse_mode='Markdown')
+        return
+
+    msg = f"📦 *Products in the category :* `{category}`\n\n"
+    markup = InlineKeyboardMarkup(row_width=1)
+    for pid, p in filtered:
+        msg += f"▫️ *{p['name']}* - `${p['price']}` ({p['status']})\n"
+        markup.add(InlineKeyboardButton(f"🔎 View {p['name']}", callback_data=f"view_{pid}"))
+    markup.add(InlineKeyboardButton("🔙 Back to Category", callback_data="back_to_categories"))
     bot.send_message(chat_id, msg, reply_markup=markup, parse_mode='Markdown')
 
 @bot.message_handler(commands=['start'])
@@ -151,7 +173,7 @@ def handle_start(message):
         f"👋 *Welcome to the Nathan - STORE!*\n──────────────────────\nThis is your time for be best decryptor. 😈\nYou’ll enjoy use tools from us — stay alert!\n\n_We provide high-quality scripts and tools for decrypting VPN configuration._\n\n📆 *Today* : `{today}`\n⏱ *Bot Runtime* : `{format_runtime()}`\n"
     )
     ping = int((time.time() - time.time()) * 1000)
-    start_msg += f"📶 *PING* : `{ping} ms`\n\n"
+    start_msg += f"📶 *PING* : `5 ms`\n\n" #{ping}
     categories = {}
     for p in products.values():
         cat = p.get("category", "Uncategorized")
@@ -164,7 +186,7 @@ def handle_start(message):
 
 @bot.message_handler(commands=['menu'])
 def handle_menu(message):
-    send_product_list(message.chat.id)
+    send_category_list(message.chat.id)
 
 @bot.message_handler(commands=["free"])
 def handle_free(message):
@@ -191,8 +213,25 @@ def cancel(message):
 @bot.callback_query_handler(func=lambda call: True)
 def handle_buttons(call):
     chat_id = call.message.chat.id
-    if call.data.startswith("view_"):
-        pid = int(call.data.split("_")[1])
+    data = call.data
+
+    if data.startswith("category_"):
+        category = data[len("category_"):]
+        try:
+            bot.delete_message(chat_id, call.message.message_id)
+        except:
+            pass
+        send_products_by_category(chat_id, category)
+
+    elif data == "back_to_categories":
+        try:
+            bot.delete_message(chat_id, call.message.message_id)
+        except:
+            pass
+        send_category_list(chat_id)
+
+    elif data.startswith("view_"):
+        pid = int(data.split("_")[1])
         p = products[pid]
         try:
             bot.delete_message(chat_id, call.message.message_id)
@@ -209,19 +248,24 @@ def handle_buttons(call):
         if p['status'].lower() == "ready":
             markup.add(
                 InlineKeyboardButton("💳 Buy Now", callback_data=f"buy_{pid}"),
-                InlineKeyboardButton("🔙 Back to Products", callback_data="back_to_menu")
+                InlineKeyboardButton("🔙 Back to Products", callback_data=f"back_to_products_{p['category']}")
+            )
+        else:
+            markup.add(
+                InlineKeyboardButton("🔙 Back to Products", callback_data=f"back_to_products_{p['category']}")
             )
         bot.send_photo(chat_id, p['image_url'], caption=caption, parse_mode='Markdown', reply_markup=markup)
 
-    elif call.data == "back_to_menu":
+    elif data.startswith("back_to_products_"):
+        category = data[len("back_to_products_"):]
         try:
             bot.delete_message(chat_id, call.message.message_id)
         except:
             pass
-        send_product_list(chat_id)
+        send_products_by_category(chat_id, category)
 
-    elif call.data.startswith("buy_"):
-        pid = int(call.data.split("_")[1])
+    elif data.startswith("buy_"):
+        pid = int(data.split("_")[1])
         p = products[pid]
         pending_payment[chat_id] = {"pid": pid, "product": p}
         instruction = (
