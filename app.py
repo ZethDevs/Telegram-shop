@@ -118,6 +118,22 @@ products = {
         "category": "JSHook"
     },
     13: {
+        "name": "JSHook (NexPrime VPN)",
+        "desc": "exclusive script for decrypt nxp.",
+        "price": 10,
+        "image_url": "https://i.ibb.co/S4wkDS13/Screenshot-2025-07-09-07-27-08-118-com-vphonegaga-titan.jpg",
+        "status": "Ready",
+        "category": "JSHook"
+    },
+    13: {
+        "name": "JSHook (SBR Injector)",
+        "desc": "exclusive script for decrypt sbr.",
+        "price": 10,
+        "image_url": "https://i.ibb.co/Vcb0VLmQ/IMG-20250709-072932.jpg",
+        "status": "Ready",
+        "category": "JSHook"
+    },
+    13: {
         "name": "JSHook (?????) Coming soon🔥",
         "desc": "exclusive script for decrypt ??.",
         "price": 99,
