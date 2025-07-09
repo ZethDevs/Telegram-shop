@@ -125,7 +125,7 @@ products = {
         "status": "Ready",
         "category": "JSHook"
     },
-    13: {
+    14: {
         "name": "JSHook (SBR Injector)",
         "desc": "exclusive script for decrypt sbr.",
         "price": 10,
@@ -133,7 +133,7 @@ products = {
         "status": "Ready",
         "category": "JSHook"
     },
-    13: {
+    15: {
         "name": "JSHook (?????) Coming soon🔥",
         "desc": "exclusive script for decrypt ??.",
         "price": 99,
