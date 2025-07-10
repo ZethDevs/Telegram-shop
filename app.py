@@ -134,6 +134,30 @@ products = {
         "category": "JSHook"
     },
     15: {
+        "name": "JSHook (OpenCustom)",
+        "desc": "exclusive script for decrypt oc.",
+        "price": 10,
+        "image_url": "https://i.ibb.co/bRK0P8xx/Screenshot-2025-07-10-22-02-06-606-com-vphonegaga-titan.jpg",
+        "status": "Ready",
+        "category": "JSHook"
+    },
+    16: {
+        "name": "StarkVPN Reloaded (Server)",
+        "desc": "exclusive script for decrypt ??.",
+        "price": 20,
+        "image_url": "https://i.ibb.co/BV6NR2Ln/Screenshot-2025-07-09-14-18-08-947-com-vphonegaga-titan.jpg",
+        "status": "Coming soon",
+        "category": "JSHook+Server"
+    },
+    17: {
+        "name": "OpenCustom (Server)",
+        "desc": "exclusive script for decrypt ??.",
+        "price": 20,
+        "image_url": "https://i.ibb.co/pBz32r7q/Screenshot-2025-07-10-22-52-53-979-com-vphonegaga-titan.jpg",
+        "status": "Coming soon",
+        "category": "JSHook+Server"
+    },
+    18: {
         "name": "JSHook (?????) Coming soon🔥",
         "desc": "exclusive script for decrypt ??.",
         "price": 99,
