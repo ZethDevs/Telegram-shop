@@ -146,7 +146,7 @@ products = {
         "desc": "exclusive script for decrypt ??.",
         "price": 20,
         "image_url": "https://i.ibb.co/BV6NR2Ln/Screenshot-2025-07-09-14-18-08-947-com-vphonegaga-titan.jpg",
-        "status": "Coming soon",
+        "status": "Ready",
         "category": "JSHook+Server"
     },
     17: {
@@ -154,7 +154,7 @@ products = {
         "desc": "exclusive script for decrypt ??.",
         "price": 20,
         "image_url": "https://i.ibb.co/pBz32r7q/Screenshot-2025-07-10-22-52-53-979-com-vphonegaga-titan.jpg",
-        "status": "Coming soon",
+        "status": "Ready",
         "category": "JSHook+Server"
     },
     18: {
